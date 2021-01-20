@@ -4,6 +4,8 @@
 #}
 
 {% extends "layout.html" %}
+{% import "plain.macro.html" as plain %}
+{% import "helper.macro.html" as helper %}
 
 {% block main %}
   <section class="bp-welcome">
@@ -13,6 +15,16 @@
     <h1 class="bp-welcome__headline">
       Welcome to Apostrophe 3
     </h1>
+
+    <!-- START HELPER ISSUE DEMO -->
+    <h3>Helper Test</h3> 
+    <p>{{ apos.home.dummyHelper("Simple helper called directly in the page") }}</p>
+    {# Uncomment below to raise unknown helper error #}
+    {# <p>{{ helper.render("Same helper called from inside of a macro will fail") }}</p> #}
+    <p>{{ plain.render("Simple plain macro without helper call is fine") }}</p>
+    <p>{% include "helper.include.html" %}</p>
+    <!-- END HELPER ISSUE DEMO -->
+
     {% if not data.user %}
       {# Message only for logged out users. #}
       <h3 class="bp-welcome__help">First time spinning up the ApostropheCMS 3 demo?</h3>

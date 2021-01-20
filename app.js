@@ -1,7 +1,7 @@
 const path = require('path');
 
 require('apostrophe')({
-  shortName: 'a3-boilerplate',
+  shortName: 'a3-helpers',
 
   modules: {
 

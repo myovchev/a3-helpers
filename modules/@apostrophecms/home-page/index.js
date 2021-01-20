@@ -1,6 +1,14 @@
 module.exports = {
   options: {
-    label: 'Home Page'
+    label: 'Home Page',
+    alias: 'home',
+  },
+  helpers() {
+    return {
+      dummyHelper(msg) {
+        return msg;
+      }
+    };
   },
   fields: {
     add: {
